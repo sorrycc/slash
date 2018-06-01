@@ -13,5 +13,5 @@ test('not convert extended-length paths', t => {
 
 test('not convert paths with Unicode', t => {
 	const path = 'c:\\aaaa\\bbbb\\★';
-	t.is(m(path), path);
+	t.is(m(path), 'c:/aaaa/bbbb/★');
 });
