@@ -10,15 +10,17 @@ This was created since the `path` methods in Node outputs `\\` paths on Windows.
 ## Install
 
 ```
-$ npm install slash
+$ npm install slash2
 ```
 
 
 ## Usage
 
+js使用：
+
 ```js
 const path = require('path');
-const slash = require('slash');
+const slash = require('slash2');
 
 const str = path.join('foo', 'bar');
 // Unix    => foo/bar
@@ -29,6 +31,20 @@ slash(str);
 // Windows => foo/bar
 ```
 
+ts使用：
+
+```typescript
+import slash from 'slash2';
+import path from 'path';
+
+const str = path.join('foo','bar');
+// Unix    => foo/bar
+// Windows => foo\\bar
+
+slash(str);
+// Unix    => foo/bar
+// Windows => foo/bar
+```
 
 ## API
 
